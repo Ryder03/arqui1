@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ribbit_web
+    command: python manage.py runserver 0:8000
+    volumes:
+      - .:/ribbit
+    ports:
+      - "8000:8000"
